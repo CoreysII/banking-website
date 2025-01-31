@@ -22,8 +22,8 @@
     <section id="overview" class="content-section">
         <h2>Account Overview</h2>
         <div class="account-info">
-            <p>Account Number: <span id="account-number"></span></p>
-            <p>Account Balance: $<span id="account-balance"></span></p>
+            <p>Account Number: <span id="account-number">123456789</span></p>
+            <p>Account Balance: $<span id="account-balance">5000.00</span></p>
         </div>
     </section>
     
@@ -60,45 +60,6 @@
         <p>&copy; 2025 Modern Bank. All rights reserved.</p>
     </footer>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            const accountInfo = await fetch('/.netlify/functions/account-overview').then(res => res.json());
-            document.getElementById('account-number').textContent = accountInfo.accountNumber;
-            document.getElementById('account-balance').textContent = accountInfo.balance.toFixed(2);
-
-            const transactions = await fetch('/.netlify/functions/transactions').then(res => res.json());
-            const transactionList = document.getElementById('transaction-list');
-            transactions.forEach(transaction => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${transaction.date}</td>
-                    <td>${transaction.description}</td>
-                    <td>${transaction.amount.toFixed(2)}</td>
-                `;
-                transactionList.appendChild(row);
-            });
-
-            document.getElementById('transfer-form').addEventListener('submit', async (event) => {
-                event.preventDefault();
-                const recipientAccount = document.getElementById('recipient-account').value;
-                const transferAmount = parseFloat(document.getElementById('transfer-amount').value);
-
-                if (recipientAccount && !isNaN(transferAmount)) {
-                    const response = await fetch('/.netlify/functions/transfer-money', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ recipientAccount, amount: transferAmount })
-                    }).then(res => res.json());
-
-                    alert(response.message);
-                    location.reload();
-                } else {
-                    alert('Please fill in all fields correctly.');
-                }
-            });
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
