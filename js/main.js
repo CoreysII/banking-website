@@ -53,3 +53,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     displayAccounts();
 });
+// Check if the user is logged in
+document.addEventListener('DOMContentLoaded', function () {
+    const userEmail = localStorage.getItem('userEmail');
+    if (!userEmail) {
+        // Redirect to login page if user is not logged in
+        window.location.href = 'login.html';
+    }
+});
+
+document.getElementById('transfer-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const fromAccount = document.getElementById('from-account').value;
+    const toAccount = document.getElementById('to-account').value;
+    const amount = document.getElementById('amount').value;
+
+    // Here you can add your transfer logic
+    console.log('From Account:', fromAccount);
+    console.log('To Account:', toAccount);
+    console.log('Amount:', amount);
+
+    // Example: Show a success message
+    alert('Transfer successful!');
+});
+
