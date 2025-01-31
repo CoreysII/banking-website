@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Banking Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#accounts">Accounts</a></li>
+                <li><a href="#transfer">Transfer</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Welcome to Your Bank</h2>
+            <p>Manage your accounts and transfer money easily.</p>
+        </section>
+        <section id="accounts">
+            <h2>Your Accounts</h2>
+            <ul id="account-list">
+                <!-- Accounts will be listed here -->
+            </ul>
+        </section>
+        <section id="transfer">
+            <h2>Transfer Money</h2>
+            <form id="transfer-form">
+                <label for="from-account">From:</label>
+                <select id="from-account" name="from-account"></select>
+                <label for="to-account">To:</label>
+                <select id="to-account" name="to-account"></select>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" required>
+                <button type="submit">Transfer</button>
+            </form>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@yourbank.com</p>
+            <p>Phone: +1234567890</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Your Bank</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
