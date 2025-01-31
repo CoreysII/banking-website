@@ -8,6 +8,7 @@ document.getElementById('login-form').addEventListener('submit', function (event
     console.log('Email:', email);
     console.log('Password:', password);
 
-    // Example: Redirect to the home page after successful login
+    // Example: Store the email in local storage and redirect to the home page after successful login
+    localStorage.setItem('userEmail', email);
     window.location.href = 'index.html';
 });
