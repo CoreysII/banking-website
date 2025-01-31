@@ -2,45 +2,52 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #f4f4f4;
 }
 
-header {
-    background-color: #0070ba;
+header, footer {
+    background-color: #333;
     color: white;
-    padding: 10px 0;
     text-align: center;
-}
-
-header nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
+    padding: 1em 0;
 }
 
 main {
-    padding: 20px;
+    padding: 2em;
 }
 
-section {
-    margin-bottom: 20px;
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    padding: 2em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-    background-color: #0070ba;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
+label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+input, select {
+    width: calc(100% - 1em);
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
     width: 100%;
-    bottom: 0;
+    padding: 0.7em;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
 }
